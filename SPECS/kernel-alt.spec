@@ -23,7 +23,7 @@
 Name: kernel-alt
 License: GPLv2
 Version: 4.19.142
-Release: 1%{?dist}
+Release: 2%{?dist}
 ExclusiveArch: x86_64
 ExclusiveOS: Linux
 Summary: The Linux kernel
@@ -40,6 +40,7 @@ BuildRequires: python
 BuildRequires: elfutils-devel, binutils-devel, xz-devel
 BuildRequires: python2-devel
 BuildRequires: asciidoc xmlto
+BuildRequires: openssl-devel
 AutoReqProv: no
 Provides: kernel-uname-r = %{uname}
 Provides: kernel = %{version}-%{release}
@@ -715,6 +716,9 @@ fi
 %{python2_sitearch}/*
 
 %changelog
+* Wed Nov 04 2020 Rushikesh Jadhav <rushikesh7@gmail.com> - 4.19.142-2
+- Add build requires openssl-devel
+
 * Tue Nov 03 2020 Rushikesh Jadhav <rushikesh7@gmail.com> - 4.19.142-1
 - Add fix for XSA-331 from kernel package
 - Add fix for XSA-332 from kernel package
